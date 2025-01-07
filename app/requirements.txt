@@ -1,3 +1,0 @@
-Flask==2.2.2
-MarkItDown==1.0.0
-Werkzeug==2.2.2
