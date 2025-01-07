@@ -1,7 +1,8 @@
-from fastapi import FastAPI, UploadFile, File
-from fastapi.responses import JSONResponse
 import os
 import tempfile
+
+from fastapi import FastAPI, UploadFile, File
+from fastapi.responses import JSONResponse
 from markitdown import MarkItDown
 
 app = FastAPI()

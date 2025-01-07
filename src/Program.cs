@@ -18,7 +18,7 @@ using (var content = new MultipartFormDataContent())
     if (response.IsSuccessStatusCode)
     {
         string responseBody = await response.Content.ReadAsStringAsync();
-        Console.WriteLine(responseBody);
+        Console.WriteLine($"MarkDown for {filePath}\n\n{responseBody}");
     }
     else
     {
