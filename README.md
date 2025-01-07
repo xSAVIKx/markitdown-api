@@ -1,45 +1,55 @@
-# Python Web Server
+# MarkItDown Web Server
 
-This project is a simple web server application built using Flask that receives binary data from a file, converts it to Markdown format using the MarkItDown library, and returns the Markdown content.
+This project is a simple web server application built using FastAPI that receives binary data from a file, converts it to Markdown format using the MarkItDown library, and returns the Markdown content.
 
-## Project Structure
-
-```
-python-web-server
-├── src
-│   ├── app.py          # Entry point of the web server application
-│   ├── mdserver.py     # Contains the function to convert files to Markdown
-│   └── utils
-│       └── file_handler.py  # Utility functions for file operations
-├── requirements.txt     # Lists the dependencies required for the project
-└── README.md            # Documentation for the project
-```
 
 ## Setup Instructions
 
 1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd python-web-server
+   ```bash
+   git clone <repository-url>   
    ```
 
-2. Install the required dependencies:
+1. Navigate to the project directory:
+   ```bash
+   cd <the folder where you cloned the repo>
    ```
-   pip install -r requirements.txt
+
+1. Build the docker image
+   ```bash
+   docker build -t markitdownserver .
    ```
+
+1. Run the docker container
+   ```bash
+   docker run -d --name markitdownserver -p 80:80 markitdownserver
+   ```
+
+1. The docker container should be visible in docker.
+
+	![Docker Container](./images/01dockerrunning.png)
 
 ## Usage
 
-1. Start the web server:
-   ```
-   python src/app.py
+1. Navigate to the C# Console application directory.
+
+   ```bash
+   cd ./src/
    ```
 
-2. Send a POST request with binary data to the server. The server will process the file, convert it to Markdown, and return the Markdown content in the response.
+1. Run the .Net application
+
+   ```bash
+   dotnet run
+   ```
+
+1. The dotnet app should send a sample document to the web server and receive the markdown content.
+
+	![dotnet app running](./images/02dotnetrun.png)
 
 ## Dependencies
 
-- Flask
+- FastAPI
 - MarkItDown
 
 ## License
