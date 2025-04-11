@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="MarkItDown Server",
-    description="API endpoint to extract text and convert it to markdown, using MarkItDown.",
+    description="API endpoint to extract text and convert it to markdown, using MarkItDown (https://github.com/microsoft/markitdown).",
 )
 
 ALLOWED_EXTENSIONS = {
@@ -44,7 +44,7 @@ def convert_to_md(filepath: str) -> str:
 
 @app.get("/")
 def read_root():
-    return {"DotNetLabs": "MarkItDown server"}
+    return {"MarkItDown Server": "hit /docs for endpoint reference"}
 
 
 @app.post("/process_file")

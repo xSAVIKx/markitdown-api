@@ -28,27 +28,21 @@ This project is a simple web server application built using FastAPI that receive
    docker run -d --name markitdownserver -p 8490:8490 markitdownserver
    ```
 
-1. The docker container should be visible in docker.
+## Endopoints
 
-   ![Docker Container](./images/01dockerrunning.png)
+## Testing the application
 
-## Usage
+You can quickly test that the application is running by uploading a file via cUrl, like so:
 
-1. Navigate to the C# Console application directory.
+```sh
+url -X POST -F "file=@;path/to/mypdf.pdf" http://localhost:8490/process_file
+```
 
-   ```bash
-   cd ./src/
-   ```
+The result should be a string encoding a JSON object like:
 
-1. Run the .Net application
-
-   ```bash
-   dotnet run
-   ```
-
-1. The dotnet app should send a sample document to the web server and receive the markdown content.
-
-   ![dotnet app running](./images/02dotnetrun.png)
+```json
+{ "markdown": "Your content written in markdown..." }
+```
 
 ## Dependencies
 
