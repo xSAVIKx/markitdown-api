@@ -22,7 +22,7 @@ fi
 
 # Rebuild the image
 echo "🏗️ Building new Docker image..."
-docker build -t $IMAGE_NAME .
+docker build -t $IMAGE_NAME:latest .
 
 # Run the new container
 echo "🚀 Starting new container..."
