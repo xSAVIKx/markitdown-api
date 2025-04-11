@@ -23,10 +23,12 @@ ALLOWED_EXTENSIONS = {
     "pdf",
     "xls",
     "xlsx",
-    "odt",
-    "ods",
-    "odp",
+    # "odt",
+    # "ods",
+    # "odp",
     "txt",
+    "csv",
+    "json"
 }
 
 
