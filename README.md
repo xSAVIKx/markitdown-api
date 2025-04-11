@@ -82,7 +82,7 @@ For more information regarding valid file types, check the official [MarkItDown]
 
 ## Testing the application
 
-You can quickly test that the application is running by uploading a file via cUrl, like so:
+You can quickly test that the application is running by uploading a file via `curl`, like so:
 
 ```sh
 curl -X POST -F "file=@path/to/mypdf.pdf" http://localhost:8490/process_file
