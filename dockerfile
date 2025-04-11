@@ -1,17 +1,30 @@
-# Use the official Python image from the Docker Hub
 FROM python:3.13-slim
 
-# Set the working directory in the container
+# Create a non-root user
+RUN groupadd -r appuser && useradd -r -g appuser appuser
+
+# Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy and install requirements first (for better caching)
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r ./requirements.txt
+# Copy only the application code
+COPY . /app/
 
-# Make port 8490 available to the world outside this container
+# Set proper ownership
+RUN chown -R appuser:appuser /app
+
+# Switch to non-root user
+USER appuser
+
+# Make port available
 EXPOSE 8490
 
-# Run app.py when the container launches
+# Add healthcheck
+HEALTHCHECK --interval=30s --timeout=3s \
+  CMD curl -f http://localhost:8490/ || exit 1
+
+
 CMD ["python", "./app.py"]
