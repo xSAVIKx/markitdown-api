@@ -2,8 +2,8 @@
 # Script to rebuild and restart the MarkItDown container
 
 # Set variables
-CONTAINER_NAME="markitdownserver"
-IMAGE_NAME="markitdownserver"
+CONTAINER_NAME="markidown-app"
+IMAGE_NAME="markidown-app"
 PORT="8490"
 
 echo "🔄 Rebuilding and restarting MarkItDown container..."

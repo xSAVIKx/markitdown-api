@@ -15,7 +15,7 @@ This project started as a fork of [elbruno/MarkItDownServer](https://github.com/
 1. Navigate to the project directory:
 
    ```bash
-   cd <the folder where you cloned the repo>
+   cd <project-dir>
    ```
 
 1. Build the docker image
@@ -94,8 +94,7 @@ The result should be a string encoding a JSON object like:
 
 ## Acknowledgments
 
-This project was originally based on [elbruno/MarkItDownServer](https://github.com/elbruno/MarkItDownServer)
-by Bruno Capuano.
+This project was originally based on [elbruno/MarkItDownServer](https://github.com/elbruno/MarkItDownServer) by Bruno Capuano.
 
 ## License
 
