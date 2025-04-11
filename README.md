@@ -30,6 +30,32 @@ This project started as a fork of [elbruno/MarkItDownServer](https://github.com/
    docker run -d --name markitdownserver -p 8490:8490 markitdownserver
    ```
 
+## Development Workflow
+
+For easier development, a convenience script is included to rebuild the image and restart the container:
+
+1. Make the script executable:
+
+   ```bash
+   chmod +x rebuild.sh
+   ```
+
+2. Run the script whenever you make changes:
+
+   ```bash
+   ./rebuild.sh
+   ```
+
+The script will:
+
+- Stop the running container
+- Remove the container
+- Build a fresh image
+- Start a new container
+- Verify the container is running
+
+This simplifies the development process when you're making frequent changes to the codebase.
+
 ## Endpoints
 
 The API offers two main endpoints:
