@@ -21,13 +21,13 @@ This project started as a fork of [elbruno/MarkItDownServer](https://github.com/
 1. Build the docker image
 
    ```bash
-   docker build -t markitdownapi .
+   docker build -t markitdown-api .
    ```
 
 1. Run the docker container
 
    ```bash
-   docker run -d --name markitdownapi -p 8490:8490 markitdownapi
+   docker run -d --name markitdown-api -p 8490:8490 markitdown-api
    ```
 
 ## Development Workflow
