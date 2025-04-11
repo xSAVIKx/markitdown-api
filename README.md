@@ -1,6 +1,6 @@
-# MarkItDown Web Server
+# MarkItDown API Server
 
-This project is a lightweight REST API server built using FastAPI that receives binary data from a file, converts it to Markdown format using the MarkItDown library, and returns the Markdown content.
+This project is a lightweight REST API server built using FastAPI that receives binary data from a file, converts it to Markdown format using the [MarkItDown](https://github.com/microsoft/markitdown) library, and returns the Markdown content.
 
 This project started as a fork of [elbruno/MarkItDownServer](https://github.com/elbruno/MarkItDownServer).
 
@@ -21,13 +21,13 @@ This project started as a fork of [elbruno/MarkItDownServer](https://github.com/
 1. Build the docker image
 
    ```bash
-   docker build -t markitdownserver .
+   docker build -t markitdownapi .
    ```
 
 1. Run the docker container
 
    ```bash
-   docker run -d --name markitdownserver -p 8490:8490 markitdownserver
+   docker run -d --name markitdownapi -p 8490:8490 markitdownapi
    ```
 
 ## Development Workflow
@@ -75,7 +75,7 @@ Accepts a POST request containing a file to convert to markdown.
 - **Method**: POST
 - **Content-Type**: multipart/form-data
 - **Parameter**: file (binary)
-- **Accepted file types**: doc, docx, ppt, pptx, pdf, xls, xlsx, odt, ods, odp, txt
+- **Accepted file types**: doc, docx, ppt, pptx, pdf, xls, xlsx, txt, csv, json
 - **Returns**: JSON object with the converted markdown content
 
 ## Testing the application
@@ -92,11 +92,11 @@ The result should be a string encoding a JSON object like:
 { "markdown": "Your content written in markdown..." }
 ```
 
-## Main Dependencies
+## Acknowledgments
 
-- FastAPI
-- MarkItDown
-- Uvicorn
+This project was originally based on [elbruno/MarkItDownServer](https://github.com/elbruno/MarkItDownServer)
+by Bruno Capuano. We've extended it with additional features and improvements while
+maintaining the core functionality.
 
 ## License
 
