@@ -64,8 +64,7 @@ The API offers two main endpoints:
 
 Provides an interactive documentation interface where you can:
 
-- Explore the API capabilities
-- Test the conversion feature directly in your browser
+- Read and explore the existing API endpoints
 - View request/response schemas and examples
 
 ### `/process_file`
@@ -77,6 +76,8 @@ Accepts a POST request containing a file to convert to markdown.
 - **Parameter**: file (binary)
 - **Accepted file types**: doc, docx, ppt, pptx, pdf, xls, xlsx, txt, csv, json
 - **Returns**: JSON object with the converted markdown content
+
+For more information regarding valid file types, check the official [MarkItDown](https://github.com/microsoft/markitdown) project.
 
 ## Testing the application
 
