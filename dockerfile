@@ -41,8 +41,4 @@ COPY --chown=appuser:appuser . /app/
 # Make port available
 EXPOSE 8490
 
-# Add healthcheck
-HEALTHCHECK --interval=30s --timeout=3s \
-  CMD curl -f http://localhost:8490/ || exit 1
-
 CMD ["python", "./app.py"]
