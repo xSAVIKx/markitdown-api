@@ -5,6 +5,9 @@ This project is a lightweight REST API server built using FastAPI that receives 
 > [!IMPORTANT]
 > This project started as a fork of [elbruno/MarkItDownServer](https://github.com/elbruno/MarkItDownServer).
 
+> [!NOTE]
+> This project leverages `uv` for dependency management and multistage Docker builds. This approach significantly reduces build times, decreases final image size, and improves dependency resolution speed compared to traditional methods.
+
 ## Setup Instructions
 
 1. Clone the repository:
