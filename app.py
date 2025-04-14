@@ -46,7 +46,7 @@ def convert_to_md(filepath: str) -> str:
 
 @app.get("/")
 def read_root():
-    return {"MarkItDown Server": "hit /docs for endpoint reference"}
+    return {"MarkItDown API Server": "hit /docs for endpoint reference"}
 
 
 @app.post("/process_file")
