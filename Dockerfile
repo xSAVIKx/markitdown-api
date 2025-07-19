@@ -43,4 +43,4 @@ ENV PORT=8490
 ENV HOST="0.0.0.0"
 EXPOSE $PORT
 
-CMD ["uvicorn", "app:app", "--host", "${HOST}", "--port", "${PORT}"]
+CMD ["fastapi", "run", "app.py", "--proxy-headers", "--host", "${HOST}", "--port", "${PORT}"]
