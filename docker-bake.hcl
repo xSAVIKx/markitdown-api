@@ -6,7 +6,7 @@ variable "TIMESTAMP" {
   default = "${timestamp()}"
 }
 variable "BUILD_DATE" {
-  default = "${formatdate("YYYYMMDD", "${TIMESTAMP}")}"
+  default = "${formatdate("YYYYMMDDHHMM", "${TIMESTAMP}")}"
 }
 
 target "markitdown-api" {
