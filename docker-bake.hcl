@@ -6,14 +6,14 @@ variable "TIMESTAMP" {
   default = "${timestamp()}"
 }
 variable "BUILD_DATE" {
-  default = "${formatdate("YYYYMMDDHHMM", "${TIMESTAMP}")}"
+  default = "${formatdate("YYYYMMDD", "${TIMESTAMP}")}"
 }
 
 target "markitdown-api" {
   dockerfile = "Dockerfile"
   tags = [
     "docker.io/xsavikx/markitdown-api:latest",
-    "docker.io/xsavikx/markitdown-api:${BUILD_DATE}"
+    "docker.io/xsavikx/markitdown-api:${BUILD_DATE}-1"
   ]
   labels = {
     "org.opencontainers.image.created"     = "${TIMESTAMP}"
