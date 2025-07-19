@@ -1,6 +1,7 @@
 import logging
 import os
 import tempfile
+from os import getenv
 
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
@@ -14,7 +15,6 @@ app = FastAPI(
     title="MarkItDown API Server",
     description="API endpoint to extract text and convert it to markdown, using MarkItDown (https://github.com/microsoft/markitdown).",
 )
-
 
 FORBIDDEN_EXTENSIONS = [
     # Executable and Script Files (Security Risk)
@@ -81,7 +81,7 @@ FORBIDDEN_EXTENSIONS = [
 
 def is_forbidden_file(filename):
     return (
-        "." in filename and filename.rsplit(".", 1)[1].lower() in FORBIDDEN_EXTENSIONS
+            "." in filename and filename.rsplit(".", 1)[1].lower() in FORBIDDEN_EXTENSIONS
     )
 
 
@@ -130,4 +130,9 @@ async def process_file(file: UploadFile = File(...)):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8490)
+    port = int(getenv("PORT", 8490))
+    host = getenv("HOST", "0.0.0.0")
+    logger.info(
+        f"Starting MarkItDown API Server on {host=} {port=}"
+    )
+    uvicorn.run(app, host=host, port=port)

@@ -39,6 +39,8 @@ USER appuser
 COPY --chown=appuser:appuser . /app/
 
 # Make port available
-EXPOSE 8490
+ENV PORT=8490
+ENV HOST="0.0.0.0"
+EXPOSE $PORT
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8490"]
+CMD ["uvicorn", "app:app", "--host", "${HOST}", "--port", "${PORT}"]
