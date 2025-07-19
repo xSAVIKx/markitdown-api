@@ -4,7 +4,7 @@
 # Set variables
 CONTAINER_NAME="markitdown-api"
 IMAGE_NAME="markitdown-api"
-PORT="8490"
+PORT="8080"
 
 echo "Rebuilding and restarting MarkItDown container..."
 

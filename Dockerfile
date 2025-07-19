@@ -43,4 +43,4 @@ ENV PORT=8080
 ENV HOST="0.0.0.0"
 EXPOSE $PORT
 
-CMD ["fastapi", "run", "app.py", "--proxy-headers", "--host", "${HOST}", "--port", "${PORT}"]
+CMD ["fastapi", "run", "app.py", "--proxy-headers", "--host", "0.0.0.0", "--port", "8080"]
