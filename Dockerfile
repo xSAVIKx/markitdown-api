@@ -39,7 +39,7 @@ USER appuser
 COPY --chown=appuser:appuser . /app/
 
 # Make port available
-ENV PORT=8490
+ENV PORT=8080
 ENV HOST="0.0.0.0"
 EXPOSE $PORT
 
